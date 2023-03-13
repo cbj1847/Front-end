@@ -1,0 +1,7 @@
+# test.html hest.js 파일은 repository에 저장X
+test.html
+test.js
+
+# 뒤에 '/'를 붙이면 디렉토리 
+# data 디렉토리에 있는 파일들은 repository에 저장X 
+data/
