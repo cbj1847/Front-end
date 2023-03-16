@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		function fizzBuzz(){
+			let num = Number(document.getElementById('num1').value);
+			let modulo;
+			let fizzBuzz;
+
+			if( num % 15 == 0 ){
+				modulo = 'FizzBuzz';
+			} 
+			else if( num % 5 == 0)
+			{
+				modulo = 'Buzz';
+			}
+			else if( num % 3 == 0)
+			{
+				modulo = 'Fizz';
+			}else{
+				 modulo;
+			}
+			let resTag = document.getElementById('result');
+			resTag.innerHTML = '<h2>Result is ' + modulo
+		}
+	</script>
+</head>
+<body style="margin:50px;">
+	<input type="text" id="num1" placeholder="write number">
+	<button onclick="fizzBuzz()">Do</button>
+	<p id="result"></p>
+</body>
+</html>
