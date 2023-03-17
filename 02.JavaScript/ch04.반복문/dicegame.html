@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dicegame</title>
+	<script>
+			function dice(){
+				let dice1 = parseInt(Math.ceil(Math.random() * 6));
+				let dice2 = parseInt(Math.ceil(Math.random() * 6));
+				let dice3 = parseInt(Math.ceil(Math.random() * 6));
+				let resTag = document.getElementById('result');
+				let pm;
+
+				if(dice1 == dice2 && dice2 == dice3){
+					pm = 10000 + (dice1*1000)
+				}else if(dice1 == dice2){
+					pm = 1000 + (dice1*100)
+				}else if(dice1 == dice3){
+					pm = 1000 + (dice1*100)
+				}else if(dice2 == dice3){
+					pm = 1000 + (dice2*100)
+				}else if(dice1>dice2 && dice2>dice3){
+					pm=dice1*100
+				}else if(dice1<dice2 && dice2>dice3){
+					pm=dice2*100
+				}else{
+					pm=dice3*100
+				}
+				resTag.innerHTML = 'Your Dice : ' + dice1 + ' ' + dice2 + '  ' + dice3 + '   PrizeMoney : ' + pm + '원';
+			}
+	</script>
+</head>
+<body style="margin:80px;">
+	<button onclick="dice()" style="font-weight: bold; margin-left: 30px; font-size: large;">RollTheDice</button>
+	<p id="result"></p>
+</body>
+</html>

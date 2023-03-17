@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Commondivisors</title>
+	<script>
+			function commonDivisors(){
+			let num1 = Number(document.getElementById('num1').value);
+			let num2 = Number(document.getElementById('num2').value);
+			let resTag = document.getElementById('result');
+			let divide;
+			let commonDivisors = [];
+			for ( let i = 1; i <= ((num1 > num2) ? num2 : num1); i++){
+				if (num1 % i == 0 && num2 % i == 0)
+					commonDivisors.push(i);
+			}
+			resTag.innerHTML = '<h3>Commondivisors of ' + num1 + ',' + num2 + ' is ' + commonDivisors + '.'
+		}
+	</script>
+</head>
+<body style="margin:80px;">
+	<input type="text" id="num1" placeholder="write number1" style="font-size: large;">
+	<input type="text" id="num2" placeholder="write number2" style="margin-left: 5px; font-size: large;">
+	<button onclick="commonDivisors()" style="font-weight: bold; margin-left: 30px; font-size: large;">calculate</button>
+	<p id="result"></p>
+</body>
+</html>
