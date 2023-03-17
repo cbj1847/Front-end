@@ -4,27 +4,26 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>FizzBuzz</title>
 	<script>
 		function fizzBuzz(){
 			let num = Number(document.getElementById('num1').value);
+			let resTag = document.getElementById('result');
 			let modulo;
-			let fizzBuzz;
-
+			
 			if( num % 15 == 0 ){
 				modulo = 'FizzBuzz';
 			} 
-			else if( num % 5 == 0)
+			else if( num % 5 == 0 )
 			{
 				modulo = 'Buzz';
 			}
-			else if( num % 3 == 0)
+			else if( num % 3 == 0 )
 			{
 				modulo = 'Fizz';
 			}else{
-				 modulo = num;
+				modulo = num;
 			}
-			let resTag = document.getElementById('result');
 			resTag.innerHTML = '<h2>Result is ' + modulo
 		}
 	</script>
