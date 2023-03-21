@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>isPalindrome</title>
+	
+	<script>
+		
+		function isPalindrome(){
+			let txt = String(document.getElementById('txt').value);
+			let resTag = document.getElementById('result');
+			let b = '';
+			let i = txt.length-1;
+			
+			for(k=0; k<=i; k++){
+				b  += txt.charAt(i-k);
+			}
+
+			resTag.innerHTML = '<h3> 입력한 Text ' + '\"' + txt +  '\"의 Palindrome 결과는 : ' + '\"' + (txt + b) + '\"' + ' 입니다.';
+			}
+			
+		
+	</script>
+</head>
+<body style="margin: 80px">
+	<h3> isPalindrome 만들기</h3>
+	<input type="text" id="txt" placeholder="text 입력" style="font-size: large;">
+	<button onclick="isPalindrome()" style="font-size: 15px;">make palindrome<img src="../pencil.png" style="height: 15px"></button>
+	<p id="result"></p>
+</body>
+</html>

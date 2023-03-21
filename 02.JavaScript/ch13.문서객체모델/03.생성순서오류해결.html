@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>생성순서 오류해결</title>
+	<script>
+		function handler(){
+			document.querySelector('h1').style.backgroundColor = 'yellow';
+			document.querySelector('h2').style.color = 'red';
+		}
+		// 해결방법2
+		// window.onload = handler;		// event handler 등록 작업, handler뒤에 ()가 없음
+	</script>
+</head>
+		 <!-- 해결방법3 -->
+<body onload = "handler()">
+	<h1>Header1</h1>
+	<h2>Header2</h2>
+	<!-- 해결 방법1 -->
+	<!-- <script>
+		document.querySelector('h1').style.backgroundColor = 'yellow';
+		document.querySelector('h2').style.color = 'red';
+	</script> -->
+</body>
+</html>

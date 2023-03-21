@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>printFilename</title>
+	
+	<script>
+		
+		function printFilename(){
+			let txt = String(document.getElementById('txt').value);
+			let resTag = document.getElementById('result');
+			
+			const path = '';
+				let index = path.lastIndexOf('\\');
+				let filename = path.substring(index + 1);
+				
+			resTag.innerHTML = '<h3> 입력한 루트 ' + '\"' + txt +  '\"의 파일명 추출 결과는 : ' + '\"' + filename + '\"' + ' 입니다.';
+			}
+		
+	</script>
+</head>
+<body style="margin: 80px; text-align: center;">
+	<h3> printFilename 만들기</h3>
+	<input type="text" id="txt" placeholder="파일명 입력" style="font-size: large;">
+	<button onclick="printFilename()" style="font-size:15px"><img src="../file.png" style="height: 15px"> print fileName</button>
+	
+	<p id="result"></p>
+</body>
+</html>
