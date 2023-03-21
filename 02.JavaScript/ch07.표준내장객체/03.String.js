@@ -76,12 +76,18 @@ console.log('13131'.split('3').length);
 
 //================================ 연습문제 =================================
 // 1~1000 사이에 0~9 몇번 표시되는지 카운트
+function strCount(str, dst){          //str에서 dst가 몇번 사용되는지 count하는 함수
+	return str.split(dst).length - 1;
+}
+
+
 
 let str2='';
 for(let i=1; i<=1000; i++){
 	str2 += i;
 }
 for(let k=0; k<10; k++){
+	//let count = strCount(str2, String(k));  // count함수 사용 
 	console.log(str2.split(k).length-1);
 }
 
