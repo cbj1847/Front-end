@@ -48,7 +48,7 @@ numbers.sort(function(a, b){			// a-b <- 오름차순
 })
 console.log(numbers);
 
-numbers.sort(function(a, b){			// a-b <- 내림차순
+numbers.sort(function(a, b){			// b-a <- 내림차순
 	return b - a;
 })
 console.log(numbers);

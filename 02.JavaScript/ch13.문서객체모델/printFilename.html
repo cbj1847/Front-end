@@ -12,7 +12,7 @@
 			let txt = String(document.getElementById('txt').value);
 			let resTag = document.getElementById('result');
 			
-			const path = '';
+			const path = txt;
 				let index = path.lastIndexOf('\\');
 				let filename = path.substring(index + 1);
 				
@@ -25,7 +25,6 @@
 	<h3> printFilename 만들기</h3>
 	<input type="text" id="txt" placeholder="파일명 입력" style="font-size: large;">
 	<button onclick="printFilename()" style="font-size:15px"><img src="../file.png" style="height: 15px"> print fileName</button>
-	
 	<p id="result"></p>
 </body>
 </html>

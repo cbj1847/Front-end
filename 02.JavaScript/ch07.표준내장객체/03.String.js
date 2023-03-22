@@ -80,8 +80,6 @@ function strCount(str, dst){          //str에서 dst가 몇번 사용되는지 
 	return str.split(dst).length - 1;
 }
 
-
-
 let str2='';
 for(let i=1; i<=1000; i++){
 	str2 += i;
