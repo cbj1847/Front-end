@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery 글자조작</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			alert($('#first').text());
+			alert($('#first').html());
+			alert($('h1').text());		// 모든 h1태그의 텍스트를 가져옴
+			alert($('h1:eq(2)').html());		// 하나의(default:첫번째) h1태그의 텍스트만 가져옴
+			$('h1').text('text() method로 변경');		// 모든 h1 태그의 텍스트가 변경
+			$('h1').html('html() method로 변경');		// 모든 h1 태그의 텍스트가 변경
+
+		});
+	</script>
+</head>
+<body style="margin: 40px;">
+	<h1 id="first">First</h1>
+	<h1 id="first">Second</h1>
+	<h1 id="first">Third</h1>
+</body>
+</html>

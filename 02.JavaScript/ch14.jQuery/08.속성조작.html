@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery 속성조작</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$('img').attr('src', 'https://picsum.photos/640/360')		// attr: 속성이 없어도 생성하여 속성을 조작.(있으면 수정)
+					.attr('width', '320px')
+			for (let i=0; i<4; i++){
+				$('<img></img>').css('margin', '5px')					// <img>는 닫는 태그가 없지만 닫는 태그도 적어줘야함
+						.attr('src', 'https://picsum.photos/200/120?q=' + i)	
+						.appendTo('hr');					
+			}
+		});
+	</script>
+</head>
+<body style="margin: 40px;">
+	<img src=".." alt="">
+	<hr>
+	<p>===============경계선================</p>
+</body>
+</html>
