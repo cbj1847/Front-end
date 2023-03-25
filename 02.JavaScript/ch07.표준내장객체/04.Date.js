@@ -1,9 +1,10 @@
 // Date 객체 생성 방법
 // 1. 현재 날짜/시간
 
+
 let today = new Date();					//현재시간
 console.log(today);						//2023-03-21T00:17:36.940Z
-console.log(today.toDateString.substring(0,2));		//Tue Mar 21 2023
+console.log(today.toDateString().substring(0,2));		//Tue Mar 21 2023
 console.log(today.toLocaleString());	//2023. 3. 21. 오전 9:19:02
 
 // e.g. 9분 -> 09분 변환
