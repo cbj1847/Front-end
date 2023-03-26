@@ -2,7 +2,7 @@
 let sum = 0;
 for (let i = 10; i>0; i--){
 	sum += i;
-//	console.log(`index=${i}, sum=${sum}`);
+console.log(`index=${i}, sum=${sum}`);
 }
 // 1에서 100까지 홀수의 합
 

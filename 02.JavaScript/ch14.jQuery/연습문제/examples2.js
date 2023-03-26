@@ -86,12 +86,6 @@ function digitalWatch() {
 		s2.width = "37"; s2.height = "61";
 
 		document.getElementById('date').innerHTML = dateStr;
-		document.getElementById('h1').innerHTML = timeStrH1;
-		document.getElementById('h2').innerHTML = timeStrH2;
-		document.getElementById('m1').innerHTML = timeStrM1;
-		document.getElementById('m1').innerHTML = timeStrM1;
-		document.getElementById('s1').innerHTML = timeStrS1;
-		document.getElementById('s1').innerHTML = timeStrS1;
 	}, 1000)
 }
 // stop

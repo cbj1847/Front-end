@@ -10,50 +10,60 @@
  	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 	 <script>
+		function dailyFs() {
+			const now = new Date();
+			const weekday = now.getDay();
+			let fS = `하루하루를 마지막이라고 생각하라. 
+그러면 예측할 수 없는 시간은  
+그대에게 더 많은 시간을 줄 것이다. - 호레스> 
+꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다. -괴테> 
+내일이란 오늘의 다른 이름일 뿐이다. ―윌리엄 포크너> 
+화려한 일을 추구하지 말라. 중요한 것은 스스로의 재능이며, 
+자신의 행동에 쏟아붓는 사랑의 정도이다. -마더 테레사> 
+마음만을 가지고 있어서는 안 된다. 반드시 실천하여야 한다. -이소룡> 
+시간은 우리 각자가 가진 고유의 재산이요, 유일한 재산이다. 
+그것을 어떻게 사용할 것인지 결정할 수 있는 것은 
+오로지 우리 자신뿐이다. 
+결코 그 재산을 남이 우리 대신 사용하지 않도록 조심해라. ―칼 샌드버그> 
+건강에 대한 지나친 걱정만큼 건강에 치명적인 것은 없다. -벤자민 프랭클린> 
+아침에 상쾌한 기분으로 일찍 일어나는 사람은 드물다. 
+대부분의 사람들은 그냥 일찍 일어날 뿐이다. ―P.P.> 
+나는 매일 저녁 모든 근심 걱정을 하나님께 넘겨 드린다. 
+어차피 하나님은 밤에도 안 주무실 테니까. ―메리 C. 크라울리> 
+오늘이란 신어야 할 신발과 같은 것이다. ―스티브 올렌> ` 
+			const fS2 = fS.split('> ');
+			let resTag = document.getElementById('fS');
+    		
+			let pick = Math.ceil(Math.random()*10);
+			
+			resTag.innerHTML =  fS2[pick];
+		}
+
 		function twoDigit(num) {
 			return (num<10) ? '0' + num : String(num);
 		}
-		
-		function digitalWatch() {
+		function myDatetime(date){
+			return `${date.getFullYear()}-${twoDigit(date.getMonth()+1)}-${twoDigit(date.getDate())} `
+			+ `${twoDigit(date.getHours())}:${twoDigit(date.getMinutes())}:${twoDigit(date.getSeconds())}`;
+		}
+		window.onload = function() {
+			setInterval(function() {
+				const now = new Date();
+				const week = ['일', '월', '화', '수', '목', '금', '토'] // == const week = '일월화수목금토'.split('');
+				let k = now.getDay();									// == week[now.getDay];
+
+				const dateStr = myDatetime(now).substring(2, 10) + '(' + week[k] + ') ' ;	// 23-03-21(수)
+				const timeStr = myDatetime(now).substring(11, 19);	// HH:MM:SS
 				
-					function calendar(){
-					
-					var now = new Date();
-					var sd = new Date(2023, 2, 2);
-					var gnow = now.getTime();
-					var gsd = sd.getTime();
-					let count = 0;
-
-					while(true){
-							var tmp_sd = sd;
-							if(gsd > gnow){
-								break;
-							}
-							else{
-								var tmp = tmp_sd.getDay();
-								if(tmp != 0 && tmp != 6){
-									count += 1;
-								}
-							}tmp_sd.setDate(sd.getDate() + 1);
-						}
-					}
-					
-				let cnum = twoDigit(count);
-
-				const h1 = document.getElementById('h1');
-				const h2 = document.getElementById('h2');
-			
-				h1.src = './images/' + cnum[0] +'.png';
-				h1.width = "37"; h1.height = "61";
-				h2.src = './images/' + cnum[1] +'.png';
-				h2.width = "37"; h2.height = "61";
-			
+				document.getElementById('time').innerHTML = dateStr + timeStr;
+			}, 1000)
 		}
 	</script>
 
 	<style>
+		
 		body {
-			position: relative; 
+			position: relative;
 		}
 	</style>
 </head>
@@ -62,50 +72,58 @@
 	<!-- upper navbar -->
 	<nav class="navbar navbar-expand-sm navbar-dark bg-secondary fixed-top">
 		<div class="container-fluid">
-		  <a class="navbar-brand" href="#section1"><img src="./images/logo.png" style="height: 70px;" alt="picture"></a>
+		  <a class="navbar-brand" ><img src="./images/logo.png" style="height: 70px;" alt="picture"></a>
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
 			<span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="mynavbar">
 			<ul class="navbar-nav me-auto" style="font-size: 25px;">
 			  <li class="nav-item" id="i1" style="margin: 20px;">
-				<a class="nav-link" href="#section2"><img src="./images/idea.png" alt="idea" style="height: 25px;"> 자기소개</a>
+				<a class="nav-link" href="#section1"><img src="./images/idea.png" alt="idea" style="height: 25px;"> 자기소개</a>
 			  </li>
 			  <li class="nav-item" id="i2" style="margin: 20px;">
-				<a class="nav-link" href="#section3"><img src="./images/hobby.png" alt="idea" style="height: 25px;"> 취미</a>
+				<a class="nav-link" href="#section2"><img src="./images/hobby.png" alt="idea" style="height: 25px;"> 취미</a>
 			  </li>
 			  <li class="nav-item" id="i3" style="margin: 20px;">
-				<a class="nav-link" href="#section4"><img src="./images/travel.png" alt="idea" style="height: 25px;"> 기억에남는 여행지</a>
+				<a class="nav-link" href="#section3"><img src="./images/travel.png" alt="idea" style="height: 25px;"> 기억에남는 여행지</a>
 			  </li>
 			  <li class="nav-item" id="i4" style="margin: 20px;">
-				<a class="nav-link" href="#section5"><img src="./images/food.png" alt="idea" style="height: 25px;"> 좋아하는 음식</a>
+				<a class="nav-link" href="#section4"><img src="./images/food.png" alt="idea" style="height: 25px;"> 좋아하는 음식</a>
 			  </li>
+				<li class="nav-item" id="date" style="margin: 20px;">
+					<a class="nav-link" >　　　　　　　</a>
+				</li>
+				<li class="nav-item" id="time" style="margin: 25px;">
+					<a class="nav-link"></a>
+				</li>
+					
+				
 			</ul>
 		  </div>
 		</div>
 	</nav>
 
 	<!-- main -->
-	<div id="section1" class="container-fluid text-black mt-4" style="padding:100px 20px; font-size: 20px;">
+	<div id="section1" class="container-fluid text-black mt-5" style="padding:100px 20px; font-size: 20px;">
 		<div class="row">
-			<div class="col">
+			<div class="col border border-3">
 				<h2>짧은자기소개</h2>
-				<br><br>
+				<hr><br>
 				<p>연세IT미래교육원에서 수강중인</p>
 				<p>27살 최범준입니다.</p>
 			</div>
-			<div class="col">
-				<h2>함께한날<button onclick="digitalWatch()" style="font-size: 30px;">보기</button></h2>
-				<hr>
-				<img id="h1"><img id="h2"><p>일째</p>
+			<div class="col border border-3">
+				<h2>하루명언 <button onclick="dailyFs()" style="font-size: 30px;">보기</button></h2>
+				<hr><br>
+				<div id="fS"></div>
 			</div>
 		</div>
 		
 		
 	</div>
 	
-	<div id="section2" class="container text-black" style="padding:px 40px;">
-		<h2><img src="./images/hobby.png" alt="idea" style="height: 30px;">취미</h2>
+	<div id="section2" class="container text-black border border-3 py-3" style="padding:px 40px;">
+		<h2><img src="./images/hobby.png" alt="idea" style="height: 30px;">취미</h2><hr>
 		<div class="row mt-4">
 			<div class="col">
 				<!-- Carousel -->
@@ -145,16 +163,16 @@
 				<br>
 				<br>
 				<p>동적인 취미활동보다는 정적인 취미활동을 선호합니다.</p>
-				<br><p>주로하는 취미활동은 음악과 영화 감상, 퍼즐맞추기, 명상입니다.</p>
-				<br><p>지브리 음악을 들으며 멍때리는 것을 좋아하고</p>
+				<br><p>주로하는 취미활동은 음악과 영화 감상, 퍼즐맞추기, 명상, 독서입니다.</p>
+				<br><p>지브리 음악을 들으며 독서하는 것을 좋아하고</p>
 				<br><p>해보고 싶은 취미는 피아노와 스케이트보드를 배워보고 싶습니다.</p>
 			</div>
 		</div>
 		
 	</div>
 	
-	<div id="section3" class="container-fluid text-black" style="padding:100px 20px;">
-		<h2><img src="./images/travel.png" alt="idea" style="height: 30px;">기억에 남는 여행지</h2>
+	<div id="section3" class="container-fluid text-black border border-3 mt-5 p-4" style="padding:100px 20px;">
+		<h2><img src="./images/travel.png" alt="idea" style="height: 30px;">기억에 남는 여행지</h2><hr><br>
 		<div class="row">
 			<div class="col-4">
 				<div class="card">
@@ -180,8 +198,8 @@
 		</div>
 	</div>
 	
-	<div id="section4" class="container-fluid text-black" style="padding:100px 20px;">
-		<h2><img src="./images/food.png" alt="idea" style="height: 30px;">좋아하는 음식</h2>
+	<div id="section4" class="container-fluid text-black border border-3 p-4 mt-4" style="padding:100px 20px;">
+		<h2><img src="./images/food.png" alt="idea" style="height: 30px;">좋아하는 음식</h2><hr><br>
 		<div class="row">
 			<div class="col-4">
 				<div class="card">
@@ -206,11 +224,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<div id="section5" class="container-fluid text-black" style="padding:100px 20px;">
-		<h2>맺는 글</h2>
-	</div>
-	
 </body>
 
 </html>
