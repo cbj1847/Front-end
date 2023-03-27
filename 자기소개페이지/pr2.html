@@ -70,26 +70,27 @@
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50" style="text-align: center;">
 	<!-- upper navbar -->
-	<h2 style="margin: 10px; font-size: 30px; color: rgb(255, 255, 255); margin-top: 30px;">
-		<a class="nav-link" >방문해 주셔서 감사합니다. 행복한 하루 되세요<br>
-			<div class="nav-item" id="time" style="margin-top: 10px; font-size: 22px;">
-				<a class="nav-link"></a>
-			</div>
-		</a>
-	</h2>
+	<div id="id0" style="margin-left: 400px; margin-right: 400px;" >
+		<h2 style="margin: 10px; font-size: 30px; margin-top: 30px;">
+			<a><br> 방문해 주셔서 감사합니다. 행복한 하루 되세요<br>
+				<br>
+			</a>
+		</h2>
+	</div>
+	
 	<!-- main -->
 	<div id="section1" class="container-fluid text-black" style="padding:50px;">
 		<div class="row">
-			<div class="col-4 px-5 ">
+			<div class="col-4">
 				<div id="id1" >
 					<p style="font-size: 25px; font-weight: bold;"><img src="./images/idea.png" alt="idea" style="height: 20px;"> 자기소개 <br></p>
 					안녕하세요. 연세IT미래교육원에서<br>
 					수강중인최범준이라고 합니다.
-				</div>
+				</div><br>
 				<div id="id2" style="margin-top: 70px">
-					힘들 때 명언을 보면 환기가 됩니다. <button onclick="dailyFs()" style="font-size: 16px;">보기</button><hr>
+					명언으로 하루 <button onclick="dailyFs()" style="font-size: 16px;">시작</button><hr>
 					<div id="fS"></div>
-				</div>
+				</div><br>
 				<div id="id3" style="margin-top: 70px">
 					저의 취미는.. 주로 정적인 활동입니다.<br>자세히 보시려면
 					<a href="./hobby.html"><button style="font-size: 16px;">
@@ -98,10 +99,21 @@
 				
 			</div>
 			<div class="col-4 ">
-				<img src="./images/male.png" alt="male" style="height: 430px; margin-top: 40px;">
+				<img src="./images/male.png" alt="male" style="height: 430px; margin-top: 10px;">
 			</div>
 			<div class="col-4 px-5">
-
+				<div id="id4" >
+					<br><p style="font-size: 16px;">나의 기억에 남는 여행지
+					<a href="./travel.html"><button>보러가기<img src="./images/travel.png" alt="travel" style="height: 15px;"></button></a></p><br>
+				</div>
+				<div id="id5" style="margin-top: 70px"><br>
+					<p style="font-size: 20px;">좋아하는<img src="./images/food.png" alt="food" style="height: 16px;">음식
+					<a href="./food.html"><button>보러가기</button></a></p>	<br>
+					
+				</div>
+				<div id="id6" style="margin-top: 70px">
+					<br><div class="nav-item" id="time" style="margin-top: 10px; font-size: 19px;"></div><br>
+				</div>
 			</div>
 		</div>
 	</div>
