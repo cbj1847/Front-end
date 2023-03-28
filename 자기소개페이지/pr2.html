@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="style.css">
 
 	 <script>
+		 const now = new Date();
+		 const weekday = now.getDay();
 		function dailyFs() {
-			const now = new Date();
-			const weekday = now.getDay();
 			let fS = `하루하루를 마지막이라고 생각하라. 
 그러면 예측할 수 없는 시간은  
 그대에게 더 많은 시간을 줄 것이다. - 호레스> 
@@ -31,7 +31,7 @@
 대부분의 사람들은 그냥 일찍 일어날 뿐이다. ―P.P.> 
 나는 매일 저녁 모든 근심 걱정을 하나님께 넘겨 드린다. 
 어차피 하나님은 밤에도 안 주무실 테니까. ―메리 C. 크라울리> 
-오늘이란 신어야 할 신발과 같은 것이다. ―스티브 올렌> ` 
+오늘이란 신어야 할 신발과 같은 것이다. ―스티브 올렌>` 
 			const fS2 = fS.split('> ');
 			let resTag = document.getElementById('fS');
     		
@@ -85,7 +85,7 @@
 				<div id="id1" >
 					<p style="font-size: 25px; font-weight: bold;"><img src="./images/idea.png" alt="idea" style="height: 20px;"> 자기소개 <br></p>
 					안녕하세요. 연세IT미래교육원에서<br>
-					수강중인최범준이라고 합니다.
+					수강중인 최범준이라고 합니다.
 				</div><br>
 				<div id="id2" style="margin-top: 70px">
 					명언으로 하루 <button onclick="dailyFs()" style="font-size: 16px;">시작</button><hr>
@@ -112,7 +112,7 @@
 					
 				</div>
 				<div id="id6" style="margin-top: 70px">
-					<br><div class="nav-item" id="time" style="margin-top: 10px; font-size: 19px;"></div><br>
+					<br><div class="nav-item" id="time" style="margin-top: 10px; font-size: 22px;"></div><br>
 				</div>
 			</div>
 		</div>
